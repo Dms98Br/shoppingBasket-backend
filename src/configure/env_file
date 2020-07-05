@@ -1,0 +1,5 @@
+// renomear para .env
+module.exports = {
+    authSecret: '',
+    connectionString: ('Coloque a chave do seu mongoDb')
+}

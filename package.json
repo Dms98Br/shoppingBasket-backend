@@ -1,0 +1,27 @@
+{
+  "name": "shoppingbasket-backend",
+  "version": "1.0.0",
+  "description": "Banco de dados do aplicativo shopping basket",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/server.js"
+  },
+  "author": "Daniel Moya da Silva",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.19.0",
+    "debug": "4.1.1",
+    "express": "4.17.1",
+    "file-system": "2.2.2",
+    "guid": "0.0.12",
+    "http": "0.0.0",
+    "jsonwebtoken": "7.4.0",
+    "mongoose": "5.9.2",
+    "nodemailer": "6.4.6",
+    "nodemailer-express-handlebars": "4.0.0",
+    "nodemon": "^2.0.4",
+    "path": "0.12.7",
+    "request": "~2.85.0"
+  }
+}
