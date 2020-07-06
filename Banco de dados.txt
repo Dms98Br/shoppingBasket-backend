@@ -1,0 +1,7 @@
+User: nome, email e senha
+Product: nome,
+	descrição,
+	categoria,
+	quantidade,
+	preço
+list: name,userId, Product[]
