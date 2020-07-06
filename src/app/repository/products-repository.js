@@ -7,7 +7,8 @@ exports.get = async () => {
     return res
 }
 exports.getById = async (_id) =>{
-    const res = await product.findById(_id)
+    const res = await product
+    .findById(_id)
     return res
 }
 //#endregion
