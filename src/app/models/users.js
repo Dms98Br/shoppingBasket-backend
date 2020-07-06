@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-const Schema = mongoose.schema
+const Schema = mongoose.Schema
 const schema = new Schema({
     name: {
         type: String,
@@ -20,7 +20,11 @@ const schema = new Schema({
     password:{
         type: String,
         require: [true, 'Senha é obrigatória']
-    }
+    },
+    list:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'list'
+    }]
 })
 // schema.pre('save', async function(next){
 //     const hash = await bcrypt.hash(this.password, 10)

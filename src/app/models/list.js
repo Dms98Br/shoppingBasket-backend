@@ -7,8 +7,8 @@ const schema = new Schema({
         required:[true, 'Nome da lista é obrigatório'],
         trim: true
     },
-    product:{
+    product:[{
         type: mongoose.Schema.Types.ObjectId,
         ref:'product'
-    }
+    }]
 })
