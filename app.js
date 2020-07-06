@@ -14,7 +14,7 @@ mongoose.connect(configure.connectionString,{useNewUrlParser: true, useUnifiedTo
 
 //carrega as rotas
 const productRoute = require('./src/app/route/product-route')
-
+const usersRoute = require('./src/app/route/users-route')
 app.use(bodyParser.json({
     limit: '5mb'
 }));// Todo conteudo passa para JSON
@@ -31,4 +31,5 @@ app.use(function(req, res, next){
 
 //app.use('/', indexRoute);
 app.use('/product', productRoute);
+app.use('/user', usersRoute)
 module.exports = app;

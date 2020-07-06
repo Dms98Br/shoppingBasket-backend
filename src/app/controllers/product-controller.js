@@ -19,8 +19,6 @@ exports.get = async(req, res)=>{
         res.status(200).send({ data: data });  
     } catch (e) {
         res.status(400).send({menssagem: e})
-        console.log(e);
-        
     }
 }
 exports.getById = async(req, res) => {
@@ -40,7 +38,7 @@ exports.getById = async(req, res) => {
 exports.update = async(req, res, next)=>{
     try {
         var data = await product.update(req.params.id, req.body)
-        res.status(200).send({menssagem: 'Produto atualizado'})
+        res.status(200).send({menssagem: 'Produto ' + data.name + ' atualizado'})
     } catch (e) {
         res.status(400).send({menssagem: e})
     }
