@@ -1,20 +1,20 @@
-const product = require('../models/product')
+const list = require('../models/list')
 const users = require('../models/users')
 
-//#region Get products
+//#region Get lists
 exports.get = async () => {
-    const res = await product.find({})
+    const res = await list.find({})
     return res
 }
 exports.getById = async (_id) =>{
-    const res = await product.findById(_id)
+    const res = await list.findById(_id)
     return res
 }
 //#endregion
 
 //#region Post
     exports.post = async(data)=>{
-        var res = product(data)
+        var res = list(data)
         await res.save()
         return res
     }
@@ -22,13 +22,9 @@ exports.getById = async (_id) =>{
 
 //#region Update
 exports.update = async(_id, data)=>{
-    await product.findByIdAndUpdate(_id,{
+    await list.findByIdAndUpdate(_id,{
         $set:{
-            name:data.name,    
-            description:data.description,
-            category:data.category,
-            amount:data.amount,
-            price:data.price
+            nameList:data.nameList            
         }        
     })
 }
@@ -37,6 +33,6 @@ exports.update = async(_id, data)=>{
 
 //#region Delete
 exports.delete = async(_id)=>{
-    await product.findOneAndRemove(_id)
+    await list.findOneAndRemove(_id)
 }
 //#endregion
