@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-const Schema = mongoose.schema
+const Schema = mongoose.Schema
 const schema = new Schema({
     nameList:{
         type: String,
@@ -12,3 +12,4 @@ const schema = new Schema({
         ref:'product'
     }]
 })
+module.exports = mongoose.model('list', schema)
