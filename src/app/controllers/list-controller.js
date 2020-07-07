@@ -1,4 +1,4 @@
-const list = require('../repository/list-repository
+const list = require('../repository/list-repository')
 //#region Get
 exports.get = async(req, res) =>{
   try{
@@ -14,9 +14,9 @@ exports.get = async(req, res) =>{
 exports.post = async(req, res, next) => {
     try {
         const data = await list.post(req.body)
-        return res.status(201).send({menssagem:"Bem-vindo(a) " + data.name})
-    } catch (e) {
-        res.status(500).send({messagem: e})   
+        return res.status(201).send({menssagem:"Bem-vindo(a) " + req.body.name})
+    } catch (e) {              
+        res.status(500).send({messagem: e})           
     }
 }
 //#endregion
@@ -24,10 +24,10 @@ exports.post = async(req, res, next) => {
 //#region Put
 exports.update = async(req, res, next)=>{
     try {
-        var body = req.body
-        var data = await list.update(req.params.id, req.body.name, req.body.product)
-        res.status(200).send({menssagem: 'Usuário ' + body.name + ' atualizado'})
+        var data = await list.update(req.params.id, req.body)
+        res.status(200).send({menssagem: 'Lista atualizada'})
     } catch (e) {
+        console.log(e);  
         res.status(400).send({error: e})
     }
 }
@@ -37,6 +37,7 @@ exports.update = async(req, res, next)=>{
 exports.delete = async (req, res) =>{
     try {
         var data = await list.delete(req.params.id)
+        console.log(req.params.id);        
         res.status(200).send({ menssagem: 'Produto removido'})
     } catch (e) {
         res.status(400).send({error: e})
