@@ -1,5 +1,4 @@
 const list = require('../models/list')
-const users = require('../models/users')
 
 //#region Get lists
 exports.get = async () => {
@@ -24,7 +23,8 @@ exports.getById = async (_id) =>{
 exports.update = async(_id, data)=>{
     await list.findByIdAndUpdate(_id,{
         $set:{
-            nameList:data.nameList            
+            nameList:data.nameList,
+            product: data.product            
         }        
     })
 }
@@ -33,6 +33,7 @@ exports.update = async(_id, data)=>{
 
 //#region Delete
 exports.delete = async(_id)=>{
-    await list.findOneAndRemove(_id)
+    console.log("Aqui " + _id);        
+    await list.findByIdAndDelete(_id)
 }
 //#endregion

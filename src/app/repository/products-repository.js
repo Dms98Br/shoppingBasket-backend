@@ -38,6 +38,6 @@ exports.update = async(_id, data)=>{
 
 //#region Delete
 exports.delete = async(_id)=>{
-    await product.findOneAndRemove(_id)
+    await product.findByIdAndDelete(_id)
 }
 //#endregion

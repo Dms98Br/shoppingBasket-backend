@@ -41,6 +41,6 @@ const user = require('../models/users')
 
 //#region Delete
 exports.delete = async(_id) =>{
-    await user.findOneAndRemove(_id)
+    await user.findByIdAndDelete(_id)
 }
 //#endregion
