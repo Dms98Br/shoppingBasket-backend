@@ -19,7 +19,7 @@ exports.post = async(req, res, next) => {
     try {
         const data = await users.post(req.body)        
         
-        return res.status(201).send({menssagem:"Bem-vindo(a) " + data.name})
+        return res.status(201).send({menssagem:"Lista criada"})
     } catch (e) {
         res.status(500).send({messagem: e})
         console.log(e);
