@@ -7,7 +7,7 @@ const schema = new Schema({
         required:[true, 'O nome é obrigatório'],
         trim: true
     },
-    lastname:{
+    lastName:{
         type: String,
         required:[true, 'O sobrenome é obrigatório'],
         trim: true

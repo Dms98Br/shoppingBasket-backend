@@ -16,14 +16,13 @@ exports.get = async(req, res)=>{
 
 //#region Post
 exports.post = async(req, res, next) => {
+    
     try {
-        const data = await users.post(req.body)        
-        
-        return res.status(201).send({menssagem:"Lista criada"})
+        data = await users.post(req.body)                
+        return res.status(201).send({menssagem:"Usuário criado"})
     } catch (e) {
         res.status(500).send({messagem: e})
-        console.log(e);
-        
+        console.log(e)        
     }
 }
 //#endregion
