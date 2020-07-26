@@ -2,7 +2,7 @@ const list = require('../models/list')
 
 //#region Get lists
 exports.get = async () => {
-    const res = await list.find({})
+    const res = await list.find({}).populate('product',{})
     return res
 }
 exports.getById = async (_id) =>{
@@ -24,7 +24,7 @@ exports.update = async(_id, data)=>{
     await list.findByIdAndUpdate(_id,{
         $set:{
             nameList:data.nameList,
-            product: data.product            
+            product: data.product          
         }        
     })
 }

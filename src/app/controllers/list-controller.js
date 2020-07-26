@@ -14,9 +14,10 @@ exports.get = async(req, res) =>{
 exports.post = async(req, res, next) => {
     try {
         const data = await list.post(req.body)
-        return res.status(201).send({menssagem:"Bem-vindo(a) " + req.body.name})
+        return res.status(201).send({menssagem:"Lista criada"})
     } catch (e) {              
-        res.status(500).send({messagem: e})           
+        res.status(500).send({messagem: e})          
+        console.log(e); 
     }
 }
 //#endregion
