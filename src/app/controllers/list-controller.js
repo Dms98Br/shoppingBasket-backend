@@ -25,6 +25,7 @@ exports.post = async(req, res, next) => {
 //#region Put
 exports.update = async(req, res, next)=>{
     try {
+        //console.log(req.body);
         var data = await list.update(req.params.id, req.body)
         res.status(200).send({menssagem: 'Lista atualizada'})
     } catch (e) {
