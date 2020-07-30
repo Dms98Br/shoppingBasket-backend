@@ -8,6 +8,18 @@ exports.get = async(req, res) =>{
     res.status(400).send(e)
   }
 }
+
+exports.getById = async(req, res) => {
+    try {
+        var data = await list.getById(req.params.id)
+        res.status(200).send(data)
+    } catch (e) {
+        //console.log(e)        
+        res.status(500).send({
+            menssagem: 'Falha ao processar sua requisição'
+        })
+    }
+}
 //#endregion
 
 //#region Post

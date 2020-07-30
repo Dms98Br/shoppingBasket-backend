@@ -6,6 +6,8 @@ router.post('/create', list.post)
 
 router.get('/', list.get)
 
+router.get('/:id', list.getById)
+
 router.put('/:id', list.update)
 
 router.delete('/:id', list.delete)
